@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+
+$primary-color: #950101;
+$hover-color: #3D0000;
+$background-color: #181818;
+$navbar-color: #000;
+$white-color: #fff;
+
+
+
+* {
+    font-family: 'EB Garamond', serif;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+    body{
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+        min-height: 100vh;
+            /* Nav bar */ 
+            nav{
+            display: grid;
+            background-color: $navbar-color;
+            height: 110px;
+            width: 100%;
+            text-align: center;
+            }
+            .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: #fff;
+            padding: 10px;
+            }
+            .logo {
+            width: 90px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+            transition: 0.3s;
+                &:hover{
+                width: 110px;    
+                }
+            }
+            .nav-links {
+            display: flex;
+            gap: 10px;
+                a{
+                text-decoration: none;
+                color: $white-color;
+                padding: 10px;
+                border-radius: 5px;
+                transition: 0.3s;
+                }
+            }
+            .enlace{
+            position: absolute;
+            padding: 20px 50px;
+            }
+            nav ul{
+            float: right;
+            margin-right: 20px;
+                li{
+                display: inline-block;
+                line-height: 80px;
+                margin: 0 5px;
+                    a{
+                    color: $primary-color;
+                    font-size: 28px;
+                    padding: 7px 13px;
+                    border-radius: 3px;
+                    text-transform: uppercase;
+                        &.active {
+                        font-size: 23px;
+                        background: $navbar-color;
+                        transition: .5s ;
+                            &:hover {
+                            font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            .checkbtn{
+            font-size: 30px;
+            color: $white-color;
+            float: right;
+            line-height: 80px;
+            margin-right: 50px;
+            cursor: pointer;
+            display: none;
+            }
+            #check{
+            display: none;
+            }
+
+
+@media (max-width: 952px){
+    .enlace {
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn{
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: $hover-color;
+        top: 110px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s ;
+    }
+    nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;    
+    }
+    }
+    nav ul li a{
+        font-size: 20px;
+        transition: 0.5s;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: $primary-color;
+        font-size: 22px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    main{
+        flex: 1;
+        .content-grid {
+            display: grid;
+            margin-top: 30px;
+            gap: 200px;
+            max-width: 800px;
+            margin-left: 0;
+            margin-right: 25px;
+            .text-section  {            
+                text-align: left;
+                margin-left: 10px;
+                height: max-content;
+                width:99vw;
+                margin-right: 20px;
+                img{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                    border: 5px solid $primary-color;
+                    border-radius: 3px;
+                    max-width: 400px;
+                    height: 300px;
+                    margin-top: 10px;
+                }
+                h2{
+                    text-align: center;
+                    font-size: 38px;
+                    color: $white-color;
+                }
+                h3{
+                    text-align: center;
+                    font-size: 25px;
+                    color: $white-color;
+                }
+                p{
+                    padding: 10px;
+                    max-height: auto;
+                    font-size: 20px;
+                    color: $white-color;
+                }
+            }
+            .image-section {
+                display: flex;
+                width: 90%;        
+                gap: 10px;
+                margin: auto;
+                margin-top: 0px;
+                margin-bottom: 60px;
+                img{
+                    border: 5px solid $primary-color;
+                    border-radius: 3px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .tabla {
+                margin: auto;
+                width: 90vw;
+            }
+            .card-container {
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-bottom: 2%;            display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 10px;
+                margin-top: 0%;
+                .card {
+                    align-items: center;
+                    }
+                    }
+                }
+            
+            .botones {
+                margin: auto;
+                .btn {
+                    background-color: $primary-color;
+                    color: $white-color;
+                    &:hover{
+                        background-color: $hover-color;
+                    }
+                }
+
+            }
+            }
+        
+    /* Footer */
+    footer {
+        background-color: $navbar-color;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 0;
+        a{
+            background-color: #950101;
+            text-decoration: none;
+            border-radius: 5px;
+            color: $white-color;
+            &:hover {
+                background-color: #3D0000;
+                
+                
+            }
+        }    
+    }
+}
